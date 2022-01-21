@@ -22,29 +22,29 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// mulCmd represents the mul command
-var mulCmd = &cobra.Command{
-	Use:   "mul",
-	Short: "A function to multiply two given numbers",
-	Long: `A function to multiply two given numbers`,
+// divCmd represents the div command
+var divCmd = &cobra.Command{
+	Use:   "div",
+	Short: "A function to divide two given numbers",
+	Long: `A function to divide two given numbers`,
 	Run: func(cmd *cobra.Command, args []string) {
 		num1, _ := strconv.ParseUint(args[0], 10, 32)
 		num2, _ := strconv.ParseUint(args[1], 10, 32)
-		tot := num1 * num2
+		tot := float64(num1) / float64(num2)
 		fmt.Println(tot)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(mulCmd)
+	rootCmd.AddCommand(divCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// mulCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// divCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// mulCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// divCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
