@@ -25,7 +25,7 @@ import (
 // mulCmd represents the mul command
 var mulCmd = &cobra.Command{
 	Use:   "mul",
-	Short: "A brief description of your command",
+	Short: "Use to multiply two numbers. add [NUM1] [NUM2]",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
