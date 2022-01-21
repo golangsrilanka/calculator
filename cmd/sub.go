@@ -22,21 +22,21 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// addCmd represents the add command
-var addCmd = &cobra.Command{
-	Use:   "add",
-	Short: "Add two numbers!",
-	Long:  `Example: go run main.go add 20 20`,
+// subCmd represents the add command
+var subCmd = &cobra.Command{
+	Use:   "sub",
+	Short: "Substract two numbers!",
+	Long:  `Example: go run main.go sub 20 20`,
 	Run: func(cmd *cobra.Command, args []string) {
 		num1, _ := strconv.ParseUint(args[0], 10, 32)
 		num2, _ := strconv.ParseUint(args[1], 10, 32)
-		tot := num1 + num2
+		tot := num1 - num2
 		fmt.Println(tot)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(addCmd)
+	rootCmd.AddCommand(subCmd)
 
 	// Here you will define your flags and configuration settings.
 
