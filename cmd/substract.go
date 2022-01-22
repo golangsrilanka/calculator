@@ -1,18 +1,3 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package cmd
 
 import (
@@ -23,43 +8,43 @@ import (
 )
 
 // addCmd represents the add command
-var addCmd = &cobra.Command{
-	Use:   "add",
-	Short: "Add two numbers",
-	Long: `Format for Addition
+var subCmd = &cobra.Command{
+	Use:   "sub",
+	Short: "Substract two numbers",
+	Long: `Format for Substraction
 	
 	Format : 
-	calculator add x y 
+	calculator sub x y 
 
 	Example:
-	calculator add 2 3
+	calculator sub 2 3
 	Output for the Example: 
-	5
+	6
 
 	To input negative numbers use the '--' symbol infront of the numbers
 
 	Format : 
-	calculator add -- x -y 
-	Example 1:
+	calculator sub -- x -y 
 
-	calculator add -- 2 -3
+	Example 1:
+	calculator sub -- 2 -3
 	Output for the Example 1: 
-	-1
+	5
 	
 	Example 2:
-	calculator add -- -2 -3
+	calculator sub -- -2 -3
 	Output for the Example 2: 
-	-5`,
+	1`,
 	Run: func(cmd *cobra.Command, args []string) {
 		num1, _ := strconv.Atoi(args[0])
 		num2, _ := strconv.Atoi(args[1])
-		result := num1 + num2
+		result := num1 - num2
 		fmt.Println(result)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(addCmd)
+	rootCmd.AddCommand(subCmd)
 
 	// Here you will define your flags and configuration settings.
 

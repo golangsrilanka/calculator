@@ -25,18 +25,36 @@ import (
 // mulCmd represents the mul command
 var mulCmd = &cobra.Command{
 	Use:   "mul",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Multiply two numbers",
+	Long: `Format for Multiplication
+	
+	Format : 
+	calculator mul x y 
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Example:
+	calculator mul 2 3
+	Output for the Example: 
+	6
+
+	To input negative numbers use the '--' symbol infront of the numbers
+
+	Format : 
+	calculator mul -- x -y 
+
+	Example 1:
+	calculator mul -- 2 -3
+	Output for the Example 1: 
+	-6
+	
+	Example 2:
+	calculator mul -- -2 -3
+	Output for the Example 2: 
+	6`,
 	Run: func(cmd *cobra.Command, args []string) {
-		num1, _ := strconv.ParseUint(args[0], 10, 32)
-		num2, _ := strconv.ParseUint(args[1], 10, 32)
-		tot := num1 * num2
-		fmt.Println(tot)
+		num1, _ := strconv.Atoi(args[0])
+		num2, _ := strconv.Atoi(args[1])
+		result := num1 * num2
+		fmt.Println(result)
 	},
 }
 
