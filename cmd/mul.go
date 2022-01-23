@@ -25,13 +25,16 @@ import (
 // mulCmd represents the mul command
 var mulCmd = &cobra.Command{
 	Use:   "mul",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Multiply two numbers",
+	Long: `CLI function to multiply 2 numbers
+	
+	Format : 
+	calculator mul x y
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Example:
+	calculator mul 2 3
+	Output:
+	6`,
 	Run: func(cmd *cobra.Command, args []string) {
 		num1, _ := strconv.ParseUint(args[0], 10, 32)
 		num2, _ := strconv.ParseUint(args[1], 10, 32)
