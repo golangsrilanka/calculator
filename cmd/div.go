@@ -14,13 +14,11 @@ import (
 // divCmd represents the div command
 var divCmd = &cobra.Command{
 	Use:   "div",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Division operator",
+	Long: `The command takes two arguments as integers and returns the division of them.
+	when the denominator is 0, it returns an undefined statement.
+	For example: div 5 4 returns 1.25,
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		num1, _ := strconv.ParseUint(args[0], 10, 32)
 		num2, _ := strconv.ParseUint(args[1], 10, 32)
