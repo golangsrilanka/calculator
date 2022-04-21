@@ -23,20 +23,20 @@ import (
 )
 
 // mulCmd represents the mul command
-var mulCmd = &cobra.Command{
-	Use:   "mul",
-	Short: "Multiply two numbers",
-	Long:  `Multiply one number by another.`,
+var subCmd = &cobra.Command{
+	Use:   "sub",
+	Short: "Substract two numbers",
+	Long:  `Substract one number from another`,
 	Run: func(cmd *cobra.Command, args []string) {
 		num1, _ := strconv.ParseUint(args[0], 10, 32)
 		num2, _ := strconv.ParseUint(args[1], 10, 32)
-		tot := num1 * num2
+		tot := num1 - num2
 		fmt.Println(tot)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(mulCmd)
+	rootCmd.AddCommand(subCmd)
 
 	// Here you will define your flags and configuration settings.
 
